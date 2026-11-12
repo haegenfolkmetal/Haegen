@@ -12,6 +12,11 @@
     /* TEMA HAEGEN: fondo scuro + testo giallo. Usato da .tema-haegen (es. logo in home) */
     --tema-sfondo: var(--colore-scuro);
     --tema-testo: var(--colore-giallo);
+
+    /* FONT (caricati da Google Fonts nel <head> di ogni pagina) */
+    --font-testo: "Mulish", Arial, sans-serif;            /* testi normali */
+    --font-titoli: "Cinzel", Georgia, serif;              /* titoli, menù, sottotitolo, bottoni */
+    --font-impatto: "Archivo Black", "Arial Black", sans-serif; /* titoli d'impatto (classe .titolo-impatto) */
 }
 
 * {
@@ -26,7 +31,21 @@ body {
     margin: 0;
     width: 100%;
     background-color: var(--colore-scuro);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-testo);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-titoli);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+/* Titolo grande e "pieno" (es. OUR STORY in home): stessa grandezza di un h1 */
+.titolo-impatto {
+    font-family: var(--font-impatto);
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
 }
 
 .displayToCenter{
@@ -57,8 +76,17 @@ body {
     text-align: center;
 }
 
-.BIOcss{
-    text-align: justify;
+/* Bio in home: colonna più stretta e righe più ariose = più facile da leggere */
+.BIOcss {
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.BIOcss p,
+.row-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
 }
 
 /*
@@ -87,8 +115,9 @@ body {
 
 /* Sottotitolo sotto il logo in home (fa parte dell'h1: aiuta Google a capire genere e provenienza) */
 .zona-logo .tagline {
+    font-family: var(--font-titoli);
     font-size: 1.1rem;
-    font-weight: normal;
+    font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-align: center;
@@ -143,9 +172,10 @@ body {
     padding: 0.5rem 0;
     color: white;
     text-decoration: none;
+    font-family: var(--font-titoli);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-weight: 700;
     border-bottom: 2px solid transparent;
 }
 
@@ -191,10 +221,6 @@ body {
 
 .row-text h2 {
     margin-top: 0;
-}
-
-.row-text p {
-    text-align: justify;
 }
 
 .row-text .row-meta {
@@ -325,7 +351,8 @@ body {
     border-radius: 4px;
     background-color: var(--colore-giallo);
     color: white;
-    font-weight: bold;
+    font-family: var(--font-titoli);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
