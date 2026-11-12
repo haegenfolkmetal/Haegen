@@ -175,9 +175,21 @@ body {
     order: 2;
 }
 
-/* DISCOGRAPHY: copertine quadrate */
+/* DISCOGRAPHY: copertine sempre intere, mai tagliate */
 .rows--discography .row-media img {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* DISCOGRAPHY, riga in evidenza (copertina + video):
+   la copertina occupa il 70% dello spazio delle altre righe (35% invece di 50%), il resto va al video */
+.rows--discography .row--featured {
+    grid-template-columns: 7fr 13fr;
+}
+
+.row-text .video-container {
+    margin-top: 1rem;
 }
 
 /*
@@ -322,8 +334,9 @@ body {
         flex-direction: column;
         gap: 5px;
         padding: 10px;
-        background: none;
+        background-color: var(--colore-scuro);
         border: 0;
+        border-radius: 4px;
         cursor: pointer;
     }
 
@@ -331,7 +344,7 @@ body {
         display: block;
         width: 26px;
         height: 3px;
-        background-color: white;
+        background-color: var(--colore-giallo);
         border-radius: 2px;
         transition: transform 0.25s, opacity 0.25s;
     }
@@ -373,7 +386,8 @@ body {
     }
 
     /* --- Righe: una colonna sola, immagine sopra e testo sotto --- */
-    .row {
+    .row,
+    .rows--discography .row--featured {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
