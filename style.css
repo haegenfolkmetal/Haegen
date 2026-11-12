@@ -311,19 +311,22 @@ h1, h2, h3, h4 {
     **************************** CONTACT FORM ****************************
 */
 
+/* Contact Us nel "tema Haegen": fondo scuro, testi gialli, bottone giallo */
 .contact {
     width: min(100%, 46rem);
     margin-inline: auto;
     padding: clamp(1.25rem, 4vw, 2.5rem);
-    background-color: #f7f7f7;
-    color: var(--colore-scuro);
-    border: 1px solid #ccc;
+    background-color: var(--tema-sfondo);
+    color: var(--tema-testo);
+    border: 1px solid var(--tema-testo);
     border-radius: 8px;
 }
 
 .contact h2 {
     margin-top: 0;
     text-align: center;
+    font-family: var(--font-impatto); /* come OUR STORY / WHO WE ARE */
+    font-weight: 400;
 }
 
 .contact form {
@@ -332,13 +335,27 @@ h1, h2, h3, h4 {
     gap: 0.6rem;
 }
 
+/* Campi: fondo un po' più chiaro del blocco, testo chiaro, bordo giallo quando ci scrivi */
 .contact input:not([type="hidden"]),
 .contact textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #999;
+    background-color: #2a2a2a;
+    color: var(--colore-chiaro);
+    border: 1px solid #555;
     border-radius: 4px;
     font: inherit;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: #999;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: var(--tema-testo);
 }
 
 .contact textarea {
@@ -352,10 +369,18 @@ h1, h2, h3, h4 {
     padding: 0.75rem 1.25rem;
     border: 0;
     border-radius: 4px;
-    background-color: var(--colore-scuro);
-    color: white;
-    font: inherit;
+    background-color: var(--tema-testo);
+    color: var(--tema-sfondo);
+    font-family: var(--font-titoli);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.contact button:hover {
+    filter: brightness(0.9);
 }
 
 /*
