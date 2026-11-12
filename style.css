@@ -259,6 +259,15 @@ h1, h2, h3, h4 {
         gap: 0;
     }
 
+    /* niente spazio tra colonna foto e colonna testo: le foto si toccano agli angoli */
+    .rows--alternate .row {
+        column-gap: 0;
+    }
+
+    .rows--alternate .row-text {
+        padding-inline: 2rem;
+    }
+
     /* DISCOGRAPHY da desktop: copertine (a sinistra) attaccate al bordo sinistro della pagina */
     .rows--discography .row-media {
         margin-left: calc(-1 * var(--padding-pagina));
@@ -267,6 +276,22 @@ h1, h2, h3, h4 {
     .rows--discography .row-media img {
         border-radius: 0;
     }
+}
+
+/*
+    DISCOGRAPHY: lo spazio tra un disco e l'altro ha il colore del tema (scuro).
+    Il contenitore è scuro e a tutta larghezza; ogni riga ha il suo fondo chiaro.
+    Il padding delle righe sostituisce quello di .pagina, così le copertine
+    continuano ad arrivare al bordo con i loro margini negativi.
+*/
+.rows--discography {
+    background-color: var(--tema-sfondo);
+    margin-inline: calc(-1 * var(--padding-pagina));
+}
+
+.rows--discography .row {
+    background-color: var(--colore-chiaro);
+    padding-inline: var(--padding-pagina);
 }
 
 /* BAND: testo centrato nel suo blocco (anche nome+soprannome e ruolo) */
