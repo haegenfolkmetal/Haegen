@@ -555,6 +555,15 @@ h1, h2, h3, h4 {
     .rows--alternate .row:nth-child(odd) .row-media {
         margin-inline: calc(-1 * var(--padding-pagina));
     }
+
+    /* DISCOGRAPHY da telefono: copertine attaccate a tutti e due i bordi, come in Band */
+    .rows--discography .row-media {
+        margin-inline: calc(-1 * var(--padding-pagina));
+    }
+
+    .rows--discography .row-media img {
+        border-radius: 0;
+    }
 }
 
 @media (max-width: 600px) {
