@@ -514,6 +514,8 @@ h1, h2, h3, h4 {
 .video-container--full {
     width: auto;
     margin-inline: calc(-1 * var(--padding-pagina));
+    /* in home il video è attaccato alla fascia del Contact Us, senza striscia chiara in mezzo */
+    margin-bottom: calc(-1 * var(--gap-pagina));
 }
 
 /*
