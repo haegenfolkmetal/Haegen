@@ -8,6 +8,7 @@
     --colore-giallo: #e6a700;
     --altezza-menu: 64px;
     --padding-pagina: 24px; /* margine interno di .pagina (16px da telefono, vedi in fondo) */
+    --gap-pagina: 3rem;     /* spazio tra un blocco e l'altro di .pagina (2rem da telefono) */
 
     /* TEMA HAEGEN: fondo scuro + testo giallo. Usato da .tema-haegen (es. logo in home) */
     --tema-sfondo: var(--colore-scuro);
@@ -68,7 +69,7 @@ h1, h2, h3, h4 {
 
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: var(--gap-pagina);
 }
 
 .page-title {
@@ -287,6 +288,8 @@ h1, h2, h3, h4 {
 .rows--discography {
     background-color: var(--tema-sfondo);
     margin-inline: calc(-1 * var(--padding-pagina));
+    /* annulla lo spazio chiaro sopra (sotto il titolo) e sotto (prima del Contact Us) */
+    margin-block: calc(-1 * var(--gap-pagina));
 }
 
 .rows--discography .row {
@@ -610,10 +613,7 @@ h1, h2, h3, h4 {
 @media (max-width: 600px) {
     :root {
         --padding-pagina: 16px;
-    }
-
-    .pagina {
-        gap: 2rem;
+        --gap-pagina: 2rem;
     }
 
     .contact {
