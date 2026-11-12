@@ -64,4 +64,44 @@ function initMenu() {
     });
 }
 
-Promise.all([...document.querySelectorAll("[data-include]")].map(loadInclude)).then(initMenu);
+// Form contatti: invia il messaggio a Web3Forms senza lasciare il sito e mostra l'esito sotto il bottone
+function initContactForm() {
+    const form = document.querySelector(".contact form");
+    if (!form) return;
+
+    const status = form.querySelector(".contact-status");
+    const button = form.querySelector("button[type='submit']");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        button.disabled = true;
+        status.className = "contact-status";
+        status.textContent = "Sending...";
+
+        try {
+            const response = await fetch(form.action, {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: new FormData(form),
+            });
+            const result = await response.json();
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || "Invio non riuscito");
+            }
+            form.reset();
+            status.classList.add("is-ok");
+            status.textContent = "Thank you! Your message has been sent, we'll get back to you soon.";
+        } catch (error) {
+            console.error(error);
+            status.classList.add("is-error");
+            status.textContent = "Something went wrong. Please try again or write us at haegenofficial@gmail.com";
+        } finally {
+            button.disabled = false;
+        }
+    });
+}
+
+Promise.all([...document.querySelectorAll("[data-include]")].map(loadInclude)).then(() => {
+    initMenu();
+    initContactForm();
+});

@@ -1,20 +1,30 @@
+<!--
+    Form contatti: i messaggi vengono inviati via Web3Forms (gratuito, https://web3forms.com)
+    e arrivano all'email con cui è stata creata la "access key".
+    La chiave può stare tranquillamente nel codice pubblico: serve solo a sapere a chi inoltrare i messaggi.
+-->
 <section class="contact">
     <h2>Contact Us</h2>
 
-    <form
-        action="mailto:haegenofficial@gmail.com?subject=Contact%20from%20Haegen%20website"
-        method="post"
-        enctype="text/plain"
-    >
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="0af49fe4-2c48-439f-be71-8ac2a484dcde">
+        <input type="hidden" name="subject" value="New message from the Haegen website">
+        <input type="hidden" name="from_name" value="Haegen website">
+        <!-- Anti-spam: campo invisibile, i bot lo compilano e il messaggio viene scartato -->
+        <input type="checkbox" name="botcheck" class="contact-botcheck" tabindex="-1" autocomplete="off">
+
         <label for="contact-name">Name</label>
-        <input id="contact-name" type="text" name="Name" required>
+        <input id="contact-name" type="text" name="name" required>
 
         <label for="contact-email">Your email</label>
-        <input id="contact-email" type="email" name="Email" required>
+        <input id="contact-email" type="email" name="email" required>
 
         <label for="contact-message">Text Message</label>
-        <textarea id="contact-message" name="Message" rows="6" required placeholder="Write us something!"></textarea>
+        <textarea id="contact-message" name="message" rows="6" required placeholder="Write us something!"></textarea>
 
         <button type="submit">Submit</button>
+
+        <!-- Qui compare l'esito dell'invio (gestito da scripts.js) -->
+        <p class="contact-status" role="status" aria-live="polite"></p>
     </form>
 </section>
