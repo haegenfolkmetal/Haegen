@@ -79,8 +79,8 @@ h1, h2, h3, h4 {
 /* Bio in home: colonna più stretta e righe più ariose = più facile da leggere */
 .BIOcss {
     width: 100%;
-    max-width: 900px;
     margin-inline: auto;
+    text-align: justify;
 }
 
 .BIOcss p,
@@ -189,9 +189,27 @@ h1, h2, h3, h4 {
     display: none;
 }
 
-/* Il Contact Us non finisce sotto il menù sticky quando ci si scorre */
-#contact {
+/* Il Contact Us (e i membri in Band, es. band.html#federico-padovano) non finiscono sotto il menù sticky */
+#contact,
+.row[id] {
     scroll-margin-top: calc(var(--altezza-menu) + 16px);
+}
+
+/*
+    Link "nascosto": sembra testo normale, al passaggio del mouse diventa giallo.
+    Usato per nome + soprannome dei membri in Band.
+*/
+.link-nascosto {
+    display: block;
+    width: fit-content;   /* cliccabile solo sul testo, non su tutta la riga */
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-nascosto:hover,
+.link-nascosto:focus-visible {
+    color: var(--colore-giallo);
 }
 
 /*
@@ -377,6 +395,12 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/* Video a tutta larghezza: i margini negativi annullano il padding di .pagina (come .tema-haegen) */
+.video-container--full {
+    width: auto;
+    margin-inline: calc(-1 * var(--padding-pagina));
 }
 
 /*
