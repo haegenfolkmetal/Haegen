@@ -7,6 +7,11 @@
     --colore-chiaro: #ebebeb;
     --colore-giallo: #e6a700;
     --altezza-menu: 64px;
+    --padding-pagina: 24px; /* margine interno di .pagina (16px da telefono, vedi in fondo) */
+
+    /* TEMA HAEGEN: fondo scuro + testo giallo. Usato da .tema-haegen (es. logo in home) */
+    --tema-sfondo: var(--colore-scuro);
+    --tema-testo: var(--colore-giallo);
 }
 
 * {
@@ -40,7 +45,7 @@ body {
     max-width: 1400px;
     min-height: 100vh;
     margin-inline: auto;
-    padding: 24px;
+    padding: var(--padding-pagina);
 
     display: flex;
     flex-direction: column;
@@ -56,11 +61,28 @@ body {
     text-align: justify;
 }
 
+/*
+    Tema Haegen: blocco a tutta larghezza con fondo scuro e testo giallo.
+    Basta aggiungere class="tema-haegen" a un elemento dentro .pagina.
+    I margini negativi annullano il padding di .pagina, così il fondo arriva fino ai bordi.
+*/
+.tema-haegen {
+    background-color: var(--tema-sfondo);
+    color: var(--tema-testo);
+    margin-inline: calc(-1 * var(--padding-pagina));
+    padding: 2.5rem var(--padding-pagina);
+}
+
 .zona-logo {
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    margin: 0;
+    margin-block: 0;
+}
+
+/* Se è il primo blocco della pagina, sale fino a toccare il menù */
+.zona-logo.tema-haegen:first-child {
+    margin-top: calc(-1 * var(--padding-pagina));
 }
 
 /* Sottotitolo sotto il logo in home (fa parte dell'h1: aiuta Google a capire genere e provenienza) */
@@ -410,8 +432,11 @@ body {
 }
 
 @media (max-width: 600px) {
+    :root {
+        --padding-pagina: 16px;
+    }
+
     .pagina {
-        padding: 16px;
         gap: 2rem;
     }
 
