@@ -253,6 +253,13 @@ h1, h2, h3, h4 {
     order: 2;
 }
 
+/* BAND da desktop: nessuno spazio tra un membro e l'altro (le foto si toccano a scacchiera) */
+@media (min-width: 769px) {
+    .rows--alternate {
+        gap: 0;
+    }
+}
+
 /* BAND: testo centrato nel suo blocco (anche nome+soprannome e ruolo) */
 .rows--alternate .row-text {
     text-align: center;
