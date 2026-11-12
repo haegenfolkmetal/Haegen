@@ -5,7 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Impedisce al "tema scuro automatico" del telefono di invertire i colori del sito -->
     <meta name="color-scheme" content="only light">
-    <title>Haegen - Folk Metal</title>
+    <title>Haegen | Folk Metal Band from Italy - Official Website</title>
+
+    <!-- ===== SEO: testo mostrato da Google sotto il titolo + indirizzo ufficiale della pagina ===== -->
+    <meta name="description" content="Haegen is an Italian folk metal band from Osimo (Marche). Folk music, flute, Celtic melodies and metal inspired by the legends of central Italy. Albums, videos, live shows and contacts.">
+    <link rel="canonical" href="https://haegenfolkmetal.github.io/Haegen/">
+
+    <!-- ===== Anteprima quando il link viene condiviso (Facebook, WhatsApp, Telegram...) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Haegen">
+    <meta property="og:title" content="Haegen | Folk Metal Band from Italy">
+    <meta property="og:description" content="Italian folk metal from Marche: talking about ancient legends of our territory.">
+    <meta property="og:url" content="https://haegenfolkmetal.github.io/Haegen/">
+    <meta property="og:image" content="https://haegenfolkmetal.github.io/Haegen/Immagini/Logo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!--
+        ===== Scheda per Google (dati strutturati) =====
+        Dice a Google che il sito è quello ufficiale della band Haegen e lo collega ai profili social/streaming
+        ("sameAs"). Se aggiungi/cambi un profilo nel footer, aggiornalo anche qui.
+    -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "https://haegenfolkmetal.github.io/Haegen/#website",
+                "name": "Haegen",
+                "alternateName": ["Haegen Folk Metal", "Haegen Official"],
+                "url": "https://haegenfolkmetal.github.io/Haegen/",
+                "inLanguage": "en"
+            },
+            {
+                "@type": "MusicGroup",
+                "@id": "https://haegenfolkmetal.github.io/Haegen/#band",
+                "name": "Haegen",
+                "alternateName": "Haegen Folk Metal",
+                "url": "https://haegenfolkmetal.github.io/Haegen/",
+                "logo": "https://haegenfolkmetal.github.io/Haegen/Immagini/Logo.jpg",
+                "image": "https://haegenfolkmetal.github.io/Haegen/Immagini/MontelagoAll.jpg",
+                "description": "Italian folk metal band from Osimo (Marche, Italy), founded in 2012. Folk melodies, flute and metal inspired by the legends and wild nature of the Marche region.",
+                "genre": ["Folk Metal", "Folk", "Celtic Metal", "Pagan Metal", "Heavy Metal"],
+                "foundingDate": "2012",
+                "foundingLocation": {
+                    "@type": "Place",
+                    "name": "Osimo, Marche, Italy"
+                },
+                "sameAs": [
+                    "https://www.facebook.com/haegenofficial/",
+                    "https://www.instagram.com/haegenofficial/",
+                    "https://www.youtube.com/@HaegenOfficial",
+                    "https://open.spotify.com/artist/6pngrg6tmF6vdqgSHcEmOx",
+                    "https://music.apple.com/artist/haegen/1663810692",
+                    "https://haegen.bandcamp.com/",
+                    "https://www.tiktok.com/@haegen.official",
+                    "https://music.amazon.it/artists/B0BRYFS9TW/haegen",
+                    "https://www.deezer.com/it/artist/196531297"
+                ],
+                "album": [
+                    {
+                        "@type": "MusicAlbum",
+                        "name": "Mazzamurello",
+                        "datePublished": "2024",
+                        "albumReleaseType": "https://schema.org/SingleRelease"
+                    },
+                    {
+                        "@type": "MusicAlbum",
+                        "name": "Immortal Lands",
+                        "datePublished": "2017",
+                        "albumReleaseType": "https://schema.org/AlbumRelease",
+                        "recordLabel": { "@type": "Organization", "name": "Hellbones Records" }
+                    },
+                    {
+                        "@type": "MusicAlbum",
+                        "name": "Tales from Nowhere",
+                        "datePublished": "2015",
+                        "albumReleaseType": "https://schema.org/EPRelease"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
     <link rel="icon" type="image/jpeg" href="Immagini/Emblem.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -16,9 +99,11 @@
 
     <main class="pagina">
 
-        <div class="zona-logo displayToCenter">
-            <img src="Immagini/Logo.jpg" alt="Logo Haegen Folk Metal">
-        </div>
+        <!-- Titolo principale della pagina (h1): è quello che Google considera più importante -->
+        <h1 class="zona-logo displayToCenter">
+            <img src="Immagini/Logo.jpg" alt="Haegen">
+            <span class="tagline">Folk Metal band from Marche, Italy</span>
+        </h1>
 
         <div class="BIOcss">
             <h2 class="textAlignCenter">

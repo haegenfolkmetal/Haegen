@@ -57,7 +57,19 @@ body {
 }
 
 .zona-logo {
+    flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+}
+
+/* Sottotitolo sotto il logo in home (fa parte dell'h1: aiuta Google a capire genere e provenienza) */
+.zona-logo .tagline {
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .zona-logo img {
