@@ -1,11 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Haegen - Folk Metal</title>
     <link rel="icon" type="image/jpeg" href="Immagini/Emblem.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
 </head>
-<script src="scripts.js" defer></script>
 <body>
+    <header class="site-header" data-include="menu.html"></header>
+
     <main class="pagina">
-        
+
         <div class="zona-logo displayToCenter">
             <img src="Immagini/Logo.jpg" alt="Logo Haegen Folk Metal">
         </div>
@@ -32,7 +40,10 @@
             </iframe>
         </div>
 
-        <div class="contact-placeholder"> </div>
-        
+        <div id="contact" data-include="contact.html" data-fallback="Modulo contatti non disponibile."></div>
+
+        <footer class="site-footer" data-include="footer.html"></footer>
+
     </main>
 </body>
+</html>

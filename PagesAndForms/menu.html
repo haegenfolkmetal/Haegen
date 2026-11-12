@@ -1,0 +1,26 @@
+<!--
+    Menù condiviso, inserito da scripts.js in ogni pagina.
+    I link usano data-href / data-src scritti RELATIVI ALLA RADICE del sito:
+    scripts.js li trasforma nel percorso giusto per la pagina corrente.
+-->
+<div class="menu-bar">
+    <a class="menu-brand" data-href="index.html" aria-label="Haegen - Home">
+        <img data-src="Immagini/Emblem.jpg" alt="">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Main menu">
+        <ul>
+            <li><a data-href="index.html">Home</a></li>
+            <li><a data-href="PagesAndForms/band.html">Band</a></li>
+            <li><a data-href="PagesAndForms/discography.html">Discography</a></li>
+            <!-- Non è una pagina: scende al Contact Us della pagina corrente -->
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+</div>

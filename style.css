@@ -1,19 +1,26 @@
-/* 
-@media (max-width: 768px) {
-    body {
-        margin: 0;
-    }
+/*
+    **************************** VARIABILI ****************************
+*/
+
+:root {
+    --colore-scuro: #1b1b1b;
+    --colore-chiaro: #ebebeb;
+    --colore-giallo: #e6a700;
+    --altezza-menu: 64px;
 }
- */
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     width: 100%;
-    background-color: #1b1b1b;
+    background-color: var(--colore-scuro);
     font-family: Arial, sans-serif;
 }
 
@@ -28,7 +35,7 @@ body {
 }
 
 .pagina {
-    background-color: #ebebeb;
+    background-color: var(--colore-chiaro);
     width: 100%;
     max-width: 1400px;
     min-height: 100vh;
@@ -38,6 +45,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+}
+
+.page-title {
+    margin: 0;
+    text-align: center;
 }
 
 .BIOcss{
@@ -55,6 +67,120 @@ body {
 }
 
 /*
+    **************************** MENU STICKY ****************************
+*/
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    min-height: var(--altezza-menu); /* tiene lo spazio mentre il menù viene caricato */
+    background-color: var(--colore-scuro);
+    border-bottom: 2px solid var(--colore-giallo);
+}
+
+.menu-bar {
+    max-width: 1400px;
+    height: var(--altezza-menu);
+    margin-inline: auto;
+    padding-inline: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-brand img {
+    display: block;
+    height: 44px;
+    width: auto;
+}
+
+.site-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.site-nav a {
+    display: block;
+    padding: 0.5rem 0;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+    border-bottom-color: var(--colore-giallo);
+}
+
+/* L'hamburger si vede solo da telefono */
+.menu-toggle {
+    display: none;
+}
+
+/* Il Contact Us non finisce sotto il menù sticky quando ci si scorre */
+#contact {
+    scroll-margin-top: calc(var(--altezza-menu) + 16px);
+}
+
+/*
+    **************************** RIGHE A 2 COLONNE (Band / Discography) ****************************
+*/
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.row-media img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.row-text h2 {
+    margin-top: 0;
+}
+
+.row-text p {
+    text-align: justify;
+}
+
+.row-text .row-meta {
+    margin-top: -0.5rem;
+    color: #555;
+    font-style: italic;
+    text-align: left;
+}
+
+/* BAND: righe 1, 3, 5 => testo a sinistra e immagine a destra */
+.rows--alternate .row:nth-child(odd) .row-media {
+    order: 2;
+}
+
+/* DISCOGRAPHY: copertine quadrate */
+.rows--discography .row-media img {
+    aspect-ratio: 1 / 1;
+}
+
+/*
     **************************** CONTACT FORM ****************************
 */
 
@@ -63,7 +189,7 @@ body {
     margin-inline: auto;
     padding: clamp(1.25rem, 4vw, 2.5rem);
     background-color: #f7f7f7;
-    color: #1b1b1b;
+    color: var(--colore-scuro);
     border: 1px solid #ccc;
     border-radius: 8px;
 }
@@ -99,25 +225,73 @@ body {
     padding: 0.75rem 1.25rem;
     border: 0;
     border-radius: 4px;
-    background-color: #1b1b1b;
+    background-color: var(--colore-scuro);
     color: white;
     font: inherit;
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .pagina {
-        padding: 16px;
-        gap: 2rem;
-    }
+/*
+  ****************************  FINE CONTACT FORM ****************************
+*/
 
-    .contact {
-        padding: 1.25rem;
-    }
+/*
+    **************************** FOOTER: SOCIAL + DONATE ****************************
+*/
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.social-links a {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--colore-scuro);
+    color: white;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+    background-color: var(--colore-giallo);
+}
+
+.donate-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border-radius: 4px;
+    background-color: var(--colore-giallo);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: filter 0.2s;
+}
+
+.donate-button:hover {
+    filter: brightness(0.9);
 }
 
 /*
-  ****************************  FINE CONTACT FORM ****************************
+    **************************** VIDEO ****************************
 */
 
 .video-container {
@@ -130,4 +304,92 @@ body {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+/*
+    **************************** TELEFONO / TABLET ****************************
+*/
+
+@media (max-width: 768px) {
+
+    /* --- Hamburger --- */
+    .menu-bar {
+        padding-inline: 16px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        background: none;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .menu-toggle-bar {
+        display: block;
+        width: 26px;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        transition: transform 0.25s, opacity 0.25s;
+    }
+
+    /* Le 3 linee diventano una X quando il menù è aperto */
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--colore-scuro);
+        border-bottom: 2px solid var(--colore-giallo);
+    }
+
+    .site-nav.is-open {
+        display: block;
+    }
+
+    .site-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 16px 1rem;
+    }
+
+    .site-nav a {
+        padding: 0.9rem 0;
+        border-bottom: 1px solid #333;
+    }
+
+    /* --- Righe: una colonna sola, immagine sopra e testo sotto --- */
+    .row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .rows--alternate .row:nth-child(odd) .row-media {
+        order: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .pagina {
+        padding: 16px;
+        gap: 2rem;
+    }
+
+    .contact {
+        padding: 1.25rem;
+    }
 }

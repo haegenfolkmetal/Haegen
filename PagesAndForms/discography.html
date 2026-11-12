@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discography - Haegen</title>
+    <link rel="icon" type="image/jpeg" href="../Immagini/Emblem.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../scripts.js" defer></script>
+</head>
+<body>
+    <header class="site-header" data-include="menu.html"></header>
+
+    <main class="pagina">
+
+        <!--
+            Ogni riga: colonna 1 = copertina, colonna 2 = testo.
+            Solo la prima riga ha il video YouTube nella seconda colonna.
+            TODO: sostituisci le copertine segnaposto (Emblem.jpg) e completa i testi.
+        -->
+        <div class="rows rows--discography">
+
+            <section class="row">
+                <div class="row-media">
+                    <img src="../Immagini/Emblem.jpg" alt="Mazzamurello - cover">
+                </div>
+                <div class="row-media video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/euTdkJ5-uWI?si=qxer4x3ocQLIxO6w"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+            <section class="row">
+                <div class="row-media">
+                    <img src="../Immagini/Emblem.jpg" alt="Immortal Lands - cover">
+                </div>
+                <div class="row-text">
+                    <h2>Immortal Lands</h2>
+                    <p class="row-meta">Full-length · 2017 · Hellbones Records</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </section>
+
+            <section class="row">
+                <div class="row-media">
+                    <img src="../Immagini/Emblem.jpg" alt="Tales from Nowhere - cover">
+                </div>
+                <div class="row-text">
+                    <h2>Tales from Nowhere</h2>
+                    <p class="row-meta">EP · 2015</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </section>
+
+            <section class="row">
+                <div class="row-media">
+                    <img src="../Immagini/Emblem.jpg" alt="Haegen (demo) - cover">
+                </div>
+                <div class="row-text">
+                    <h2>Haegen</h2>
+                    <p class="row-meta">Demo</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </section>
+
+        </div>
+
+        <div id="contact" data-include="contact.html" data-fallback="Modulo contatti non disponibile."></div>
+
+        <footer class="site-footer" data-include="footer.html"></footer>
+
+    </main>
+</body>
+</html>
