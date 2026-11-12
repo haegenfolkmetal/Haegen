@@ -311,6 +311,13 @@ h1, h2, h3, h4 {
     **************************** CONTACT FORM ****************************
 */
 
+/* Fascia che contiene il Contact Us: fondo come il body, a tutta larghezza (margini negativi come .tema-haegen) */
+#contact {
+    background-color: var(--tema-sfondo);
+    margin-inline: calc(-1 * var(--padding-pagina));
+    padding: 3rem var(--padding-pagina);
+}
+
 /* Contact Us nel "tema Haegen": fondo scuro, testi gialli, bottone giallo */
 .contact {
     width: min(100%, 46rem);
