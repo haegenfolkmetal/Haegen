@@ -262,6 +262,12 @@ h1, h2, h3, h4 {
     margin-inline: auto;
 }
 
+/* BAND: nome e soprannome con lo stesso font di WHO WE ARE (solo il font, non grandezza/colori) */
+.rows--alternate .row-text h2 {
+    font-family: var(--font-impatto);
+    font-weight: 400; /* Archivo Black esiste solo in questo peso: evita il grassetto "finto" */
+}
+
 .rows--alternate .row-text .row-meta {
     text-align: center;
 }
