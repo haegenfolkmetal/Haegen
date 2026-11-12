@@ -277,6 +277,7 @@ h1, h2, h3, h4 {
     .rows--discography .row-media img {
         border-radius: 0;
     }
+
 }
 
 /*
@@ -295,6 +296,11 @@ h1, h2, h3, h4 {
 .rows--discography .row {
     background-color: var(--colore-chiaro);
     padding-inline: var(--padding-pagina);
+}
+
+/* BAND: niente striscia chiara tra WHO WE ARE e il primo membro */
+.rows--alternate {
+    margin-top: calc(-1 * var(--gap-pagina));
 }
 
 /* BAND: testo centrato nel suo blocco (anche nome+soprannome e ruolo) */
@@ -633,6 +639,11 @@ h1, h2, h3, h4 {
 
     .rows--discography .row-media img {
         border-radius: 0;
+    }
+    /* DISCOGRAPHY da telefono: anche il video (Mazzamurello) va da bordo a bordo */
+    .rows--discography .row-text .video-container {
+        width: auto;
+        margin-inline: calc(-1 * var(--padding-pagina));
     }
 }
 
