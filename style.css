@@ -258,6 +258,15 @@ h1, h2, h3, h4 {
     .rows--alternate {
         gap: 0;
     }
+
+    /* DISCOGRAPHY da desktop: copertine (a sinistra) attaccate al bordo sinistro della pagina */
+    .rows--discography .row-media {
+        margin-left: calc(-1 * var(--padding-pagina));
+    }
+
+    .rows--discography .row-media img {
+        border-radius: 0;
+    }
 }
 
 /* BAND: testo centrato nel suo blocco (anche nome+soprannome e ruolo) */
