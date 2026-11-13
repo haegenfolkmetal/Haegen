@@ -258,6 +258,8 @@ h1, h2, h3, h4 {
 @media (min-width: 769px) {
     .rows--alternate {
         gap: 0;
+        /* ultima foto attaccata alla fascia del Contact Us, senza striscia chiara */
+        margin-bottom: calc(-1 * var(--gap-pagina));
     }
 
     /* niente spazio tra colonna foto e colonna testo: le foto si toccano agli angoli */
