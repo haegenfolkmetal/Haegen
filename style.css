@@ -91,6 +91,28 @@ h1, h2, h3, h4 {
 }
 
 /*
+    WHAT DEFINES US (home): fascia scura del tema, titolo giallo e testo chiaro centrato.
+    Il margine sotto negativo la attacca al video, senza striscia chiara in mezzo.
+*/
+.tema-haegen.what-defines-us {
+    margin-bottom: calc(-1 * var(--gap-pagina));
+    padding-block: 3rem;
+}
+
+.what-defines-us h2 {
+    margin-top: 0;
+}
+
+.what-defines-us p {
+    max-width: 820px;
+    margin-inline: auto;
+    color: var(--colore-chiaro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/*
     Tema Haegen: blocco a tutta larghezza con fondo scuro e testo giallo.
     Basta aggiungere class="tema-haegen" a un elemento dentro .pagina.
     I margini negativi annullano il padding di .pagina, così il fondo arriva fino ai bordi.
