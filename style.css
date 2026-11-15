@@ -91,25 +91,21 @@ h1, h2, h3, h4 {
 }
 
 /*
-    WHAT DEFINES US (home): fascia scura del tema, titolo giallo e testo chiaro centrato.
+    OUR STORY (home) nel tema Haegen: fascia scura a tutta larghezza, titolo giallo, testo chiaro.
     Il margine sotto negativo la attacca al video, senza striscia chiara in mezzo.
 */
-.tema-haegen.what-defines-us {
+.BIOcss.tema-haegen {
+    width: auto;
     margin-bottom: calc(-1 * var(--gap-pagina));
     padding-block: 3rem;
 }
 
-.what-defines-us h2 {
+.BIOcss.tema-haegen h2 {
     margin-top: 0;
 }
 
-.what-defines-us p {
-    max-width: 820px;
-    margin-inline: auto;
+.BIOcss.tema-haegen p {
     color: var(--colore-chiaro);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    text-align: center;
 }
 
 /*
