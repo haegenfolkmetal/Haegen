@@ -161,6 +161,27 @@ h1, h2, h3, h4 {
     border-bottom: 2px solid var(--colore-giallo);
 }
 
+/* Link "di riserva" per Google: visibili solo per un istante, finché scripts.js non carica il menù vero */
+.menu-fallback {
+    max-width: 1400px;
+    height: var(--altezza-menu);
+    margin-inline: auto;
+    padding-inline: var(--padding-pagina);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.menu-fallback a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: var(--font-titoli);
+    font-weight: 700;
+}
+
 .menu-bar {
     max-width: 1400px;
     height: var(--altezza-menu);

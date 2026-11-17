@@ -99,7 +99,14 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <header class="site-header" data-include="menu.html"></header>
+    <!-- I link qui dentro servono a Google (li trova senza JavaScript): scripts.js li sostituisce subito con il menù vero -->
+    <header class="site-header" data-include="menu.html">
+        <nav class="menu-fallback" aria-label="Main menu">
+            <a href="index.html">Home</a>
+            <a href="PagesAndForms/band.html">Band</a>
+            <a href="PagesAndForms/discography.html">Discography</a>
+        </nav>
+    </header>
 
     <main class="pagina">
 
