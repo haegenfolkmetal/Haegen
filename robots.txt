@@ -1,0 +1,6 @@
+# Istruzioni per i motori di ricerca (Google, Bing...).
+# Tutto il sito può essere letto e indicizzato; qui sotto c'è l'indirizzo della sitemap.
+User-agent: *
+Allow: /
+
+Sitemap: https://haegenfolkmetal.github.io/sitemap.xml
