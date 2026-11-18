@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Elenco delle pagine del sito per Google. Inviala da Google Search Console > Sitemap. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://haegenfolkmetal.github.io/</loc>
-        <lastmod>2026-11-17</lastmod>
+        <lastmod>2026-11-18</lastmod>
     </url>
     <url>
         <loc>https://haegenfolkmetal.github.io/PagesAndForms/band.html</loc>
-        <lastmod>2026-11-17</lastmod>
+        <lastmod>2026-11-18</lastmod>
     </url>
     <url>
         <loc>https://haegenfolkmetal.github.io/PagesAndForms/discography.html</loc>
-        <lastmod>2026-11-17</lastmod>
+        <lastmod>2026-11-18</lastmod>
     </url>
 </urlset>
